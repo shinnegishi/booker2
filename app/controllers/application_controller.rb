@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || welcome_path
+    puts 'work'
+    stored_location_for(resource) || user_path
   end
 
   def configure_permitted_parameters

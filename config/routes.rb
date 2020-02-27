@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/scaffold'
+
   resources :books
   #resources :users
   root to:'home#index'
