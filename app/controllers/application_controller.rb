@@ -6,16 +6,19 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(resource)
-    puts 'work'
-    stored_location_for(resource) || user_path
-  end
+#  def after_sign_in_path_for(resource)
+#    puts 'work'
+#    stored_location_for(resource) || user_path
+#  end
 
   def configure_permitted_parameters
     #strong parametersを設定し、usernameを許可
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :password, :password_confirmation) }
-    devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:username, :password, :password_confirmation) }
+    #devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :password, :password_confirmation) }
+     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+     devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:username, :password, :password_confirmation) }
   end
 
-
+  #def configure_permitted_parameters
+  #  devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  #end
 end
