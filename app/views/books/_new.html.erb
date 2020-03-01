@@ -1,29 +1,6 @@
-<h1>新規投稿</h1>
-<!-- form_for部分 -->
-<%= form_for(@blog) do |f| %>
-
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-
-    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="?"><input type="hidden" name="authenticity_token" value="/g5uopT45BFqx5OoosIWYBF0z2CgMng9CzVe8aUxUf4WrsoUYObOgQE3+ArsNppGnRsLflbJrWDaTtZ7hjX4Ag==">
-  <div class="field row">
-    <label for="book_title">Title</label>
-    <input class="col-xs-12 book_title" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field row">
-    <label for="book_opinion">Opinion</label>
-    <textarea class="col-xs-12 book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions row">
-    <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
-  </div>
-</form>
-
-<div class="field row">Opinion</div>
-    <%= f.text_area :opinion %>
-
-    <%= f.submit '投稿' %>
-
+<h2>New Book</h2>
+<%= form_for(book) do |f| %>
+<%= f.text_field :title,class:'col-xs-12' %>
+<%= f.text_area :body,class:'col-xs-12' %>
+<%= f.submit "Create Book", class:'btn btn-primary'%>
 <% end %>

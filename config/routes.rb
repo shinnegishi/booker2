@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'user/scaffold'
-
+  #root 'post_images#index'
   resources :books
   #resources :users
   root to:'home#index'

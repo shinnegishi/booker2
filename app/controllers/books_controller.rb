@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -70,6 +70,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :opinion)
+      params.require(:book).permit(:title, :body)
     end
 end
