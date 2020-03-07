@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to '/home', :notice => ''
+      ## if you want render 404 page
+      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+  end
 #  def after_sign_in_path_for(resource)
 #    puts 'work'
 #    stored_location_for(resource) || user_path
