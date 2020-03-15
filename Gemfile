@@ -23,7 +23,7 @@ gem 'rails', '~> 5.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-#gem 'puma', '~> 3.1'
+gem 'puma', '~> 3.7.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,15 +45,26 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+#group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+#  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+#  gem 'capybara', '>= 2.15'
+#  gem 'selenium-webdriver'
+#  gem 'rspec-rails', '~> 3.6'
+#  gem 'spring-commands-rspec'
+#  gem "factory_bot_rails"
+#  gem 'faker'
+#end
+
+group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.6'
-  gem 'spring-commands-rspec'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
